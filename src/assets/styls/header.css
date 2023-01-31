@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.headerContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+}
+.headerWrapper{
+    position: relative;
+    height: 100px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 3px 0px 8px 3px black;
+}
+.logoWrapper{
+    margin-right: 20px;
+}
+.headerIconWrapper{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+  }
+.headerIconWrapper img{
+    width: 100%;
+}
