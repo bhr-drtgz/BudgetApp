@@ -43,7 +43,8 @@ const AddExpense = () => {
       form.categoryId === "" ||
       form.place === "" ||
       form.description === "" ||
-      form.date === ""
+      form.date === "" ||
+      form.categoryId === "empty"
     ) {
       alert("Bütün alanlar zorunludur");
       return;
@@ -121,10 +122,10 @@ const AddExpense = () => {
           <div className="formElement">
             <label htmlFor="date">Kategori</label>
             <select
-              defaultValue={categories[0].id}
-              onChange={(event) =>
+               onChange={(event) =>
                 setForm({ ...form, categoryId: event.target.value })
               }>
+              <option value={"empty"}>Kategori Seçin</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>
                   {category.name}
