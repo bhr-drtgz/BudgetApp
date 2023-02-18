@@ -19,19 +19,10 @@
       "categoryId": "4"
     },
     {
-      "price": "99",
-      "place": "Kırtasiye",
-      "title": "Oyun Hamuru",
-      "description": "Yuh Fiyata Bak!",
-      "date": "2023-01-27",
-      "categoryId": "3",
-      "id": "1674850585624"
-    },
-    {
       "price": "1699",
       "place": "Giyim",
       "title": "Kaban",
-      "description": "Sanki Çeyrek Aldım!",
+      "description": "Sanki Çeyrek Aldım! Para Bitti!!!",
       "date": "2023-01-27",
       "categoryId": "2",
       "id": "1674830585324"
