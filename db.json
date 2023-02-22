@@ -5,7 +5,7 @@
       "price": 1500,
       "place": "A101",
       "date": "2023-01-19",
-      "title": "haftalık market",
+      "title": "haftalık market ALIŞVERİŞİ",
       "description": "Sepet Bile Dolmadı!",
       "categoryId": "1"
     },
@@ -26,6 +26,15 @@
       "date": "2023-01-27",
       "categoryId": "2",
       "id": "1674830585324"
+    },
+    {
+      "price": "450",
+      "place": "Copy Center",
+      "title": "Çanta",
+      "description": "Fiyatlar Uçmuş",
+      "date": "2023-02-21",
+      "categoryId": "3",
+      "id": "1676994921995"
     }
   ],
   "categories": [
@@ -44,6 +53,10 @@
     {
       "id": "4",
       "name": "Elektronik"
+    },
+    {
+      "id": "1676997110126",
+      "name": "Eglence"
     }
-  ]
+   ]
 }

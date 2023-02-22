@@ -37,7 +37,7 @@ const ListExpenses = ({ expenses = [], categories, selectedCategory,didUpdate,se
           onMouseEnter={() => setAddBtnHovered(true)}
           onMouseLeave={() => setAddBtnHovered(false)}
           onClick={() => navigate("/add-expense")}
-          className="addBtn">
+          className="addBtnList">
           {addBtnHovered === true ? (
             <img src={addIconHover} />
           ) : (

@@ -21,6 +21,7 @@ const EditExpense = () => {
         categoryId: "",
     });
     const [categories, setCategories] = useState(null);
+    const [showSuccessModal, setShowSuccessModal] = useState(false)
 
 
     useEffect(() => {
@@ -43,25 +44,25 @@ const EditExpense = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-            /* validation */
-    if (
-        form.price === "" ||
-        form.title === "" ||
-        form.categoryId === "" ||
-        form.place === "" ||
-        form.description === "" ||
-        form.date === "" ||
-        form.categoryId === "empty"
-      ) {
-        alert("Bütün alanlar zorunludur");
-        return;
-     }
-     axios.put(`http://localhost:3004/expenses/${params.expenseId}`,form)
-     .then((res)=>{
-        navigate("/")
-     })
-     .catch((err)=>{setShowErorModal(true)})
-}
+        /* validation */
+        if (
+            form.price === "" ||
+            form.title === "" ||
+            form.categoryId === "" ||
+            form.place === "" ||
+            form.description === "" ||
+            form.date === "" ||
+            form.categoryId === "empty"
+        ) {
+            alert("Bütün alanlar zorunludur");
+            return;
+        }
+        axios.put(`http://localhost:3004/expenses/${params.expenseId}`, form)
+            .then((res) => {
+                setShowSuccessModal(true)
+            })
+            .catch((err) => { setShowErorModal(true) })
+    }
 
     if (expense === null && showErorModal === false && categories === null)
         return null
@@ -144,7 +145,6 @@ const EditExpense = () => {
                             onChange={(event) =>
                                 setForm({ ...form, categoryId: event.target.value })
                             }>
-                            <option value={"empty"}>Kategori Seçin</option>
                             {categories.map((category) => (
                                 <option key={category.id} value={category.id}>
                                     {category.name}
@@ -159,7 +159,16 @@ const EditExpense = () => {
                     </div>
                 </form>
             </div>
-
+            {
+                showSuccessModal === true && (
+                    <GeneralModal
+                        title='Başarılı'
+                        content='Güncelleme İşlemi Başarı İle Gerçekleştirildi'
+                        closeButtonText='AnaSayfaya Dön'
+                        closeButtonClick={() => navigate("/")}
+                    />
+                )
+            }
         </div>
     )
 }

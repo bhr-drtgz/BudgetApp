@@ -2,6 +2,8 @@ import React from "react";
 
 import '../assets/styls/categoryList.css'
 
+import { Link } from "react-router-dom";
+
 const CategoriesList = ({
   categories = [],
   selectedCategory,
@@ -27,7 +29,10 @@ const CategoriesList = ({
             {category.name}
           </p>
         ))}
+        <div className="categoryOperationWrapLink">
+        <Link to={"/category-operations"}>Kategori İşlemleri &rarr;</Link>
       </div>
+       </div>
     </div>
   );
 };

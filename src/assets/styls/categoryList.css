@@ -11,6 +11,7 @@
     align-items: center;
 }
 .categoriesWrapper{
+    position: relative;
     width: 70%;
     display: flex;
     justify-content: space-between;
@@ -33,3 +34,15 @@
 .categoryItemActive{
     background-color: rgba(0,0,0,0.2);
 }
+.categoryOperationWrapLink{
+    position: absolute;
+    top: -35px;
+   }
+.categoryOperationWrapLink a{
+    text-decoration: none;
+    color: blue;
+    font-weight: 800;
+  }
+  .categoryOperationWrapLink a:hover{
+    text-decoration: underline;
+  }
