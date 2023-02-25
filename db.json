@@ -5,7 +5,7 @@
       "price": 1500,
       "place": "A101",
       "date": "2023-01-19",
-      "title": "haftalık market ALIŞVERİŞİ",
+      "title": "Haftalık Market Alışverişi",
       "description": "Sepet Bile Dolmadı!",
       "categoryId": "1"
     },
@@ -35,6 +35,15 @@
       "date": "2023-02-21",
       "categoryId": "3",
       "id": "1676994921995"
+    },
+    {
+      "price": "199",
+      "place": "M1 AVM",
+      "title": "Sinema Bileti",
+      "description": "Artık Filmde İzlenmez",
+      "date": "2023-02-22",
+      "categoryId": "1676997110126",
+      "id": "1677084574946"
     }
   ],
   "categories": [
@@ -58,5 +67,5 @@
       "id": "1676997110126",
       "name": "Eglence"
     }
-   ]
+  ]
 }

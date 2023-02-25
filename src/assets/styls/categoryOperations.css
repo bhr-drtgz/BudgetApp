@@ -13,9 +13,17 @@
 }
 
 .categoryOperationCotegoryWrap {
+    display: flex;
+    justify-content: space-between;
     padding: 15px;
     font-weight: 800;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.categoryOperationCotegoryWrap a{
+    text-decoration: none;
+    font-size: 11px;
+    
+
 }
 
 .addBtn {
@@ -40,4 +48,20 @@
 .addBtn:hover {
     transform: scale(1.05);
 
+}
+.deleteBtn{
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(239, 95, 95);
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+}
+.editBtn{
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(67, 67, 235);
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
 }
