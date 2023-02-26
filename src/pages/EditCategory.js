@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import GeneralModal from "../components/GeneralModal";
+
 
 const EditCategory = () => {
 
@@ -9,6 +11,8 @@ const EditCategory = () => {
     const [form, setForm] = useState(null)
     const [allCategories, setAllCategories] = useState(null)
     const [oldName, setOldName] = useState("")
+    const [openModal, setOpenModal] = useState(false)
+    const navigate = useNavigate()
     useEffect(() => {
 
         axios.get(`http://localhost:3004/categories`)
@@ -36,6 +40,14 @@ const EditCategory = () => {
             alert("Bu Kategori Mevcut")
             return
         }
+        axios.put(`http://localhost:3004/categories/${categoryId}`,form)
+            .then((res) => {
+
+                setOpenModal(true)
+             })
+            .catch((err) => {
+
+            })
     }
 
     if (form === null || allCategories === null)
@@ -62,6 +74,17 @@ const EditCategory = () => {
                     </div>
                 </form>
             </div>
+            {
+                openModal === true && (
+                    <GeneralModal
+                        title='Güncelleme'
+                        content='Kategori Başarı İle Güncellendi'
+                        hasConfirm={false}
+                        closeButtonText="Kategori İşlemlerine dön"
+                        closeButtonClick={() =>navigate("/category-operations")}
+                    />
+                )
+            }
         </div>
     )
 }

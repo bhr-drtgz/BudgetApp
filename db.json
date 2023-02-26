@@ -1,71 +1,9 @@
 {
-  "expenses": [
-    {
-      "id": "1",
-      "price": 1500,
-      "place": "A101",
-      "date": "2023-01-19",
-      "title": "Haftalık Market Alışverişi",
-      "description": "Sepet Bile Dolmadı!",
-      "categoryId": "1"
-    },
-    {
-      "id": "2",
-      "price": 52000,
-      "place": "Apple",
-      "date": "2023-01-19",
-      "title": "iPhone 14 promax",
-      "description": "Patron Çıldırdı",
-      "categoryId": "4"
-    },
-    {
-      "price": "1699",
-      "place": "Giyim",
-      "title": "Kaban",
-      "description": "Sanki Çeyrek Aldım! Para Bitti!!!",
-      "date": "2023-01-27",
-      "categoryId": "2",
-      "id": "1674830585324"
-    },
-    {
-      "price": "450",
-      "place": "Copy Center",
-      "title": "Çanta",
-      "description": "Fiyatlar Uçmuş",
-      "date": "2023-02-21",
-      "categoryId": "3",
-      "id": "1676994921995"
-    },
-    {
-      "price": "199",
-      "place": "M1 AVM",
-      "title": "Sinema Bileti",
-      "description": "Artık Filmde İzlenmez",
-      "date": "2023-02-22",
-      "categoryId": "1676997110126",
-      "id": "1677084574946"
-    }
-  ],
+  "expenses": [],
   "categories": [
     {
-      "id": "1",
-      "name": "Market"
-    },
-    {
-      "id": "2",
-      "name": "Giyim"
-    },
-    {
-      "id": "3",
-      "name": "Eğitim"
-    },
-    {
-      "id": "4",
-      "name": "Elektronik"
-    },
-    {
-      "id": "1676997110126",
-      "name": "Eglence"
+      "id": "1677424576428",
+      "name": "MARKET"
     }
   ]
 }

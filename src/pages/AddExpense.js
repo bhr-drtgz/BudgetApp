@@ -6,10 +6,10 @@ import axios from "axios";
 
 import "../assets/styls/addExpense.css";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const AddExpense = () => {
-    const navigate=useNavigate()
+  const navigate = useNavigate()
   var year = new Date().getFullYear();
   var month = new Date().getMonth() + 1;
   if (month < 10) month = `0${month}`;
@@ -31,7 +31,7 @@ const AddExpense = () => {
       .then((res) => {
         setCategories(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,10 +53,10 @@ const AddExpense = () => {
       ...form,
       id: String(new Date().getTime()),
     })
-    .then(res=>{
+      .then(res => {
         navigate("/")
-    })
-    .catch(err=>{})
+      })
+      .catch(err => { })
   };
   if (categories === null) return null;
   return (
@@ -120,21 +120,35 @@ const AddExpense = () => {
             />
           </div>
           <div className="formElement">
-            <label htmlFor="date">Kategori</label>
-            <select
-               onChange={(event) =>
-                setForm({ ...form, categoryId: event.target.value })
-              }>
-              <option value={"empty"}>Kategori Seçin</option>
-              {categories.map((category) => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
+            {
+              categories.length > 0 && (
+                <>
+                  <label htmlFor="date">Kategori</label>
+                  <select
+                    onChange={(event) =>
+                      setForm({ ...form, categoryId: event.target.value })
+                    }>
+                    <option value={"empty"}>Kategori Seçin</option>
+                    {categories.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {category.name}
+                      </option>
+                    ))}
+                  </select>
+
+                </>
+              )
+            }
+            {
+              categories.length <= 0 && (
+                <div style={{ textAlign: 'center' }}>
+                  <Link to={"/add-category"}>Henüz Kayıtlı Bir Kategori Yok. Öncelikle Kategori Ekleyiniz </Link>
+                </div>
+              )
+            }
           </div>
           <div className="submitBtnWrapper">
-            <button className="submitBtn" type="submit">
+            <button disabled={categories.length <= 0 ? true : false } className="submitBtn" type="submit">
               Kaydet
             </button>
           </div>
