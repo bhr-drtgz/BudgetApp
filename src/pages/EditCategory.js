@@ -7,23 +7,45 @@ const EditCategory = () => {
 
     const { categoryId } = useParams()
     const [form, setForm] = useState(null)
+    const [allCategories, setAllCategories] = useState(null)
+    const [oldName, setOldName] = useState("")
     useEffect(() => {
 
-        axios.get(`http://localhost:3004/categories/${categoryId}`)
+        axios.get(`http://localhost:3004/categories`)
             .then((res) => {
-                setForm(res.data)
+                setAllCategories(res.data)
+
+                const myCat = res.data.find((item) => item.id === categoryId)
+
+                setForm(myCat)
+                setOldName(myCat.name)
             })
             .catch((err) => { })
     }, [])
 
-    if (form === null)
+
+    const EditSubmit = (event) => {
+        event.preventDefault()
+
+        if (form.name === "") {
+            alert("Kategori İsmi Boş Bırakılamaz")
+            return
+        }
+        const hasCategory = allCategories.find(item => item.name.toLowerCase() === form.name.toLowerCase())
+        if (hasCategory !== undefined) {
+            alert("Bu Kategori Mevcut")
+            return
+        }
+    }
+
+    if (form === null || allCategories === null)
         return null
 
     return (
         <div>
             <Header navigateTo={"/category-operations"} whichPage="editcategory" />
             <div className="formWrapper">
-                <form >
+                <form onSubmit={EditSubmit} >
                     <div className="formElement">
                         <label htmlFor="name">Kategori İsmi</label>
                         <input value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })}
@@ -32,7 +54,9 @@ const EditCategory = () => {
                         />
                     </div>
                     <div className="submitBtnWrapper">
-                        <button className="submitBtn" type="submit">
+                        <button disabled={
+                            form.name.toLowerCase() === oldName.toLowerCase() || form.name === "" ? true : false
+                        } className="submitBtn" type="submit">
                             Güncelle
                         </button>
                     </div>

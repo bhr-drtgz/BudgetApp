@@ -23,7 +23,7 @@ const AddCategory = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        if (form.name === null) {
+        if (form.name === "") {
             alert("Kategori İsmi Boş Bırakılamaz")
             return
         }

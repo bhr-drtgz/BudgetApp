@@ -57,3 +57,7 @@
     box-shadow: 3px 3px 0 0 #000;
     border-radius: 5px;
 }
+.submitBtn:disabled{
+    cursor: not-allowed;
+    background-color: gray;
+}
